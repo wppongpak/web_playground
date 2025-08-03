@@ -1,0 +1,62 @@
+{
+    "title": "GraphQL Demo",
+    "books": {
+        "title": "Books",
+        "addBook": "Add Book",
+        "bookTitle": "Book title",
+        "authorName": "Author name",
+        "loading": "Loading books...",
+        "by": "by"
+    },
+    "users": {
+        "title": "Users",
+        "addUser": "Add User",
+        "userName": "User name",
+        "email": "Email address",
+        "loading": "Loading users..."
+    },
+    "graphql": {
+        "endpoint": "GraphQL Endpoint",
+        "endpointInfo": "Your GraphQL server is running at:",
+        "exploreInfo": "You can explore the GraphQL schema and run queries using tools like GraphQL Playground or Apollo Studio."
+    },
+    "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "language": {
+        "english": "English",
+        "thai": "ไทย"
+    },
+    "auth": {
+        "signin": "Sign In",
+        "signout": "Sign Out",
+        "email": "Email",
+        "password": "Password",
+        "loginTitle": "Login to GraphQL Demo",
+        "loginButton": "Login",
+        "signingIn": "Signing in...",
+        "invalidCredentials": "Invalid email or password",
+        "loginRequired": "Please login to continue",
+        "welcomeBack": "Welcome back"
+    },
+    "userManagement": {
+        "title": "User Management",
+        "allUsers": "All Users",
+        "role": "Role",
+        "actions": "Actions",
+        "edit": "Edit",
+        "delete": "Delete",
+        "addNewUser": "Add New User",
+        "editUser": "Edit User",
+        "save": "Save",
+        "cancel": "Cancel",
+        "confirmDelete": "Are you sure you want to delete this user?"
+    },
+    "navigation": {
+        "home": "Home",
+        "userManagement": "User Management",
+        "profile": "Profile"
+    }
+}

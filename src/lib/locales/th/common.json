@@ -1,0 +1,62 @@
+{
+    "title": "การสาธิต GraphQL",
+    "books": {
+        "title": "หนังสือ",
+        "addBook": "เพิ่มหนังสือ",
+        "bookTitle": "ชื่อหนังสือ",
+        "authorName": "ชื่อผู้แต่ง",
+        "loading": "กำลังโหลดหนังสือ...",
+        "by": "โดย"
+    },
+    "users": {
+        "title": "ผู้ใช้",
+        "addUser": "เพิ่มผู้ใช้",
+        "userName": "ชื่อผู้ใช้",
+        "email": "อีเมล",
+        "loading": "กำลังโหลดผู้ใช้..."
+    },
+    "graphql": {
+        "endpoint": "GraphQL Endpoint",
+        "endpointInfo": "เซิร์ฟเวอร์ GraphQL ของคุณกำลังทำงานที่:",
+        "exploreInfo": "คุณสามารถสำรวจ GraphQL schema และเรียกใช้คิวรีได้โดยใช้เครื่องมือเช่น GraphQL Playground หรือ Apollo Studio"
+    },
+    "theme": {
+        "light": "สว่าง",
+        "dark": "มืด",
+        "system": "ระบบ"
+    },
+    "language": {
+        "english": "English",
+        "thai": "ไทย"
+    },
+    "auth": {
+        "signin": "เข้าสู่ระบบ",
+        "signout": "ออกจากระบบ",
+        "email": "อีเมล",
+        "password": "รหัสผ่าน",
+        "loginTitle": "เข้าสู่ระบบการสาธิต GraphQL",
+        "loginButton": "เข้าสู่ระบบ",
+        "signingIn": "กำลังเข้าสู่ระบบ...",
+        "invalidCredentials": "อีเมลหรือรหัสผ่านไม่ถูกต้อง",
+        "loginRequired": "กรุณาเข้าสู่ระบบเพื่อดำเนินการต่อ",
+        "welcomeBack": "ยินดีต้อนรับกลับมา"
+    },
+    "userManagement": {
+        "title": "จัดการผู้ใช้",
+        "allUsers": "ผู้ใช้ทั้งหมด",
+        "role": "บทบาท",
+        "actions": "การดำเนินการ",
+        "edit": "แก้ไข",
+        "delete": "ลบ",
+        "addNewUser": "เพิ่มผู้ใช้ใหม่",
+        "editUser": "แก้ไขผู้ใช้",
+        "save": "บันทึก",
+        "cancel": "ยกเลิก",
+        "confirmDelete": "คุณแน่ใจหรือไม่ว่าต้องการลบผู้ใช้นี้?"
+    },
+    "navigation": {
+        "home": "หน้าแรก",
+        "userManagement": "จัดการผู้ใช้",
+        "profile": "โปรไฟล์"
+    }
+}
