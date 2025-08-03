@@ -1,12 +1,43 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
+
+// Available DaisyUI themes from tailwind.config.js
+const daisyThemes = [
+    'light',
+    'dark', 
+    'cupcake',
+    'bumblebee',
+    'emerald',
+    'corporate',
+    'synthwave',
+    'retro',
+    'cyberpunk',
+    'valentine',
+    'halloween',
+    'garden',
+    'forest',
+    'aqua',
+    'lofi',
+    'pastel',
+    'fantasy',
+    'wireframe',
+    'black',
+    'luxury',
+    'dracula',
+    'cmyk',
+    'autumn',
+    'business',
+    'acid',
+    'lemonade',
+    'night',
+    'coffee',
+    'winter',
+];
 
 export function ThemeToggle() {
     const { theme, setTheme } = useTheme();
-    const { t } = useTranslation('common');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -27,9 +58,11 @@ export function ThemeToggle() {
                 onChange={e => setTheme(e.target.value)}
                 className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
             >
-                <option value="light">{t('theme.light')}</option>
-                <option value="dark">{t('theme.dark')}</option>
-                <option value="system">{t('theme.system')}</option>
+                {daisyThemes.map(themeName => (
+                    <option key={themeName} value={themeName}>
+                        {themeName.charAt(0).toUpperCase() + themeName.slice(1)}
+                    </option>
+                ))}
             </select>
         </div>
     );

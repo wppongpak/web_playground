@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { Navigation, DaisyThemeManager } from '@/components/layout';
+import { Navigation, ThemeScript } from '@/components/layout';
 import { ThemeDebug } from '@/components/test';
 
 interface LayoutWrapperProps {
@@ -14,7 +14,7 @@ export function LayoutWrapper({ children }: LayoutWrapperProps) {
 
     return (
         <>
-            <DaisyThemeManager />
+            <ThemeScript />
             <Navigation />
             {isAuthPage ? (
                 children

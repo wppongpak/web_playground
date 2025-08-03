@@ -25,6 +25,7 @@ export function LanguageToggle() {
                 <select
                     value="en"
                     className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
+                    onChange={(event) => changeLanguage(event.target.value)}
                 >
                     <option value="en">English</option>
                     <option value="th">ไทย</option>

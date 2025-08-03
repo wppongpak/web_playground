@@ -61,3 +61,36 @@ export const ADD_USER = gql`
         }
     }
 `;
+
+// Additional CRUD mutations
+export const UPDATE_BOOK = gql`
+    mutation UpdateBook($id: ID!, $title: String, $author: String) {
+        updateBook(id: $id, title: $title, author: $author) {
+            id
+            title
+            author
+        }
+    }
+`;
+
+export const DELETE_BOOK = gql`
+    mutation DeleteBook($id: ID!) {
+        deleteBook(id: $id)
+    }
+`;
+
+export const UPDATE_USER = gql`
+    mutation UpdateUser($id: ID!, $name: String, $email: String) {
+        updateUser(id: $id, name: $name, email: $email) {
+            id
+            name
+            email
+        }
+    }
+`;
+
+export const DELETE_USER = gql`
+    mutation DeleteUser($id: ID!) {
+        deleteUser(id: $id)
+    }
+`;

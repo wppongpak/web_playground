@@ -3,20 +3,38 @@
 import { useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
+// Theme management component for DaisyUI integration
 export function ThemeScript() {
     const { theme, resolvedTheme } = useTheme();
 
     useEffect(() => {
-        // Manually ensure the data-theme attribute is set on the HTML element
-        const currentTheme = theme || resolvedTheme || 'light';
-        console.log('Setting theme to:', currentTheme);
-        
-        // Set data-theme on the HTML element
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        
-        // Also set the class for compatibility
-        document.documentElement.className = currentTheme;
+        // Wait for next-themes to be ready
+        if (theme) {
+            const currentTheme = theme === 'system' ? resolvedTheme || 'light' : theme;
+            console.log('ThemeScript: Updating theme to:', currentTheme);
+            
+            // Set data-theme on the HTML element for DaisyUI
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
     }, [theme, resolvedTheme]);
+
+    // Also listen for theme changes from next-themes
+    useEffect(() => {
+        const handleThemeChange = () => {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                console.log('ThemeScript: Storage change detected:', storedTheme);
+                document.documentElement.setAttribute('data-theme', storedTheme);
+            }
+        };
+
+        // Listen for localStorage changes (theme updates)
+        window.addEventListener('storage', handleThemeChange);
+        
+        return () => {
+            window.removeEventListener('storage', handleThemeChange);
+        };
+    }, []);
 
     return null;
 }
@@ -26,12 +44,19 @@ export function InitialThemeScript() {
     const script = `
         (function() {
             try {
+                // Get theme from localStorage (next-themes uses 'theme' key by default)
                 var theme = localStorage.getItem('theme') || 'light';
+                console.log('InitialThemeScript: Setting initial theme to:', theme);
+                
+                // Set data-theme attribute for DaisyUI
                 document.documentElement.setAttribute('data-theme', theme);
-                document.documentElement.className = theme;
+                
+                // Also set the theme in a data attribute so next-themes can read it
+                document.documentElement.setAttribute('data-theme-initial', theme);
             } catch (e) {
+                console.error('InitialThemeScript error:', e);
                 document.documentElement.setAttribute('data-theme', 'light');
-                document.documentElement.className = 'light';
+                document.documentElement.setAttribute('data-theme-initial', 'light');
             }
         })();
     `;
